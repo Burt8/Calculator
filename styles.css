@@ -7,6 +7,7 @@ body {
 
 .casing {
     border: solid 2px black;
+    margin-top: 48px;
     width: 350px;
     height: 600px;
     border-radius: 15px;
