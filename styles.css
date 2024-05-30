@@ -13,7 +13,17 @@ body {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    justify-content:flex-start;
     align-items: center;
+}
+
+.screen {
+    flex:1;
+    margin-top:10px;
+    max-height:75px;
+    width:300px;
+    border: 3px solid black;
+    border-radius: 15px;
 }
 
 h1 {
