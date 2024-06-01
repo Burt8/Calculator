@@ -9,7 +9,7 @@ body {
     border: solid 2px black;
     margin-top: 48px;
     width: 350px;
-    height: 600px;
+    height: 525px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ body {
 
 .button {
     margin:4px;
-    padding:16px;
+    padding: 12px 24px 12px 24px;
     background-color:gainsboro;
     border-radius: 15px;
 }
@@ -39,16 +39,15 @@ body {
 .functions {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     width:300px;
 }
 
 .numpad {
     justify-content: center;
-    border: 1px solid gray;
     border-radius: 15px;
-    max-width: 150px;
-    margin-top:24px;
+    max-width: 200px;
+    margin-top:36px;
     display:flex;
     flex-wrap: wrap;
 }
