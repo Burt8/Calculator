@@ -29,11 +29,12 @@ body {
     border-radius: 15px;
 }
 
-.button {
+button {
     margin:4px;
-    padding: 12px 24px 12px 24px;
+    padding: 12px 20px 12px 20px;
     background-color:gainsboro;
     border-radius: 15px;
+    border-color: gray;
 }
 
 .functions {
