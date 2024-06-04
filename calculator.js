@@ -16,3 +16,16 @@ let multiply = document.querySelector('.multiply')
 let divide = document.querySelector('.divide')
 let clear = document.querySelector('.clear')
 let equals = document.querySelector('.equals')
+// operations
+const addition = function(a,b) {
+    return a+b
+}
+const subtraction = function(a,b) {
+    return a-b
+}
+const multiplication = function(a,b) {
+    return a*b
+}
+const division = function(a,b) {
+    return a/b
+}
