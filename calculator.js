@@ -18,6 +18,7 @@ let clear = document.querySelector('.clear')
 let equals = document.querySelector('.equals')
 // display
 let screen = document.querySelector('.screen')
+let subject = document.querySelector('.subject')
 // operations
 const addition = function(a,b) {
     return a+b
@@ -30,8 +31,4 @@ const multiplication = function(a,b) {
 }
 const division = function(a,b) {
     return a/b
-}
-// operation
-let operation = function(numberOne,operator,numberTwo) {
-
 }
