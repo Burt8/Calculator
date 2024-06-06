@@ -51,3 +51,7 @@ functionButtons.map(button => {
         subject.textContent += current
     })
 })
+// for clear button
+clear.addEventListener('click', function() {
+    subject.textContent = ''
+})
