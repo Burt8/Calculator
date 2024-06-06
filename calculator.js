@@ -33,7 +33,7 @@ const division = function(a,b) {
     return a/b
 }
 // event handlers
-let buttonNumbers = [one,two,three,four,five,six,seven,eight,nine,zero]
+let numpadButtons = [one,two,three,four,five,six,seven,eight,nine,zero]
 let numbers = ['1','2','3','4','5','6','7','8','9','0']
 buttonNumbers.map(button => {
     let current = numbers.shift()
