@@ -34,7 +34,7 @@ const division = function(a,b) {
 }
 // event handlers
 let functionButtons = [add,subtract,multiply,divide];
-let functions = ['+','-','x','/']
+let functions = [' + ',' - ',' x ',' / ']
 let numpadButtons = [one,two,three,four,five,six,seven,eight,nine,zero];
 let numbers = ['1','2','3','4','5','6','7','8','9','0'];
 // for the numpad buttons
