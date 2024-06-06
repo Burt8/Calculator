@@ -10,15 +10,15 @@ let eight = document.querySelector('.eight');
 let nine = document.querySelector('.nine');
 let zero = document.querySelector('.zero');
 // function buttons
-let add = document.querySelector('.add')
-let subtract = document.querySelector('.subtract')
-let multiply = document.querySelector('.multiply')
-let divide = document.querySelector('.divide')
-let clear = document.querySelector('.clear')
-let equals = document.querySelector('.equals')
+let add = document.querySelector('.add');
+let subtract = document.querySelector('.subtract');
+let multiply = document.querySelector('.multiply');
+let divide = document.querySelector('.divide');
+let clear = document.querySelector('.clear');
+let equals = document.querySelector('.equals');
 // display
-let screen = document.querySelector('.screen')
-let subject = document.querySelector('.subject')
+let screen = document.querySelector('.screen');
+let subject = document.querySelector('.subject');
 // operations
 const addition = function(a,b) {
     return a+b
@@ -33,11 +33,12 @@ const division = function(a,b) {
     return a/b
 }
 // event handlers
-let numpadButtons = [one,two,three,four,five,six,seven,eight,nine,zero]
-let numbers = ['1','2','3','4','5','6','7','8','9','0']
+let functionButtons = [add,subtract,multiply,divide,clear];
+let numpadButtons = [one,two,three,four,five,six,seven,eight,nine,zero];
+let numbers = ['1','2','3','4','5','6','7','8','9','0'];
 buttonNumbers.map(button => {
     let current = numbers.shift()
     button.addEventListener('click', function() {
         subject.textContent = current;
     })
-})
+});
