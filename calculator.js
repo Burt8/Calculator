@@ -41,6 +41,13 @@ let numbers = ['1','2','3','4','5','6','7','8','9','0'];
 numpadButtons.map(button => {
     let current = numbers.shift()
     button.addEventListener('click', function() {
-        subject.textContent = current;
+        subject.textContent += current;
     })
 });
+// for the function buttons (excluding clear and equals)
+functionButtons.map(button => {
+    let current = functions.shift()
+    button.addEventListener('click', function() {
+        subject.textContent += current
+    })
+})
