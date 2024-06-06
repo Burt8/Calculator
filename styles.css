@@ -3,10 +3,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: rgb(52, 52, 83);
 }
 
 .casing {
     border: solid 2px black;
+    background-color:rgb(209, 207, 207);
     margin-top: 48px;
     width: 350px;
     height: 525px;
@@ -21,6 +23,7 @@ body {
 
 .screen {
     display:flex;
+    background-color: white;
     flex:1;
     margin-top:10px;
     margin-bottom:36px;
@@ -37,7 +40,8 @@ button {
     padding: 12px 22px 12px 22px;
     background-color:gainsboro;
     border-radius: 15px;
-    border-color: gray;
+    background-color: white;
+    border-color: rgb(45, 45, 45);
 }
 
 .functions {
