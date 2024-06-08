@@ -42,6 +42,7 @@ numpadButtons.map(button => {
     let current = numbers.shift()
     button.addEventListener('click', function() {
         subject.textContent += current;
+        numberMemory += current;
     })
 });
 // for the function buttons (excluding clear and equals)
@@ -49,9 +50,35 @@ functionButtons.map(button => {
     let current = functions.shift()
     button.addEventListener('click', function() {
         subject.textContent += current
+        numberMemory += current;
     })
 })
 // for clear button
 clear.addEventListener('click', function() {
     subject.textContent = ''
+    numberMemory = ''
+})
+// calculator
+let numberMemory = ''
+equals.addEventListener('click', function() {
+    let result = ''
+    let numberSplit = numberMemory.split(' ')
+    let n1 = Number(numberSplit[0])
+    let n2 = Number(numberSplit[2])
+    let operation = numberSplit.splice(1,1)
+    switch(operation[0]) {
+        case '+':
+            result = (addition(n1,n2));
+            break;
+        case '-':
+            result = subtraction(n1,n2);
+            break;
+        case 'x':
+            result = multiplication(n1,n2);
+            break;
+        case '/':
+            result = division(n1,n2);
+            break;
+    }
+    subject.textContent = '' + result
 })
