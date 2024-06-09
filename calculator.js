@@ -58,42 +58,10 @@ clear.addEventListener('click', function() {
     subject.textContent = ''
     numberMemory = ''
 })
-// calculator
+// memory
 let numberMemory = ''
 let result = ''
-
-const operate = function() {
-    let numberSplit = numberMemory.split(' ')
-    let n1 = Number(numberSplit[0])
-    let n2 = Number(numberSplit[2])
-    let operation = numberSplit.splice(1,1)
-    switch(operation[0]) {
-        case '+':
-            result = (addition(n1,n2));
-            break;
-        case '-':
-            result = subtraction(n1,n2);
-            break;
-        case 'x':
-            result = multiplication(n1,n2);
-            break;
-        case '/':
-            result = division(n1,n2);
-            break;
-    }
-    subject.textContent = '' + result
-    result += numberSplit
-}
-equals.addEventListener('click', operate)
-// restructuring my calculation method
-const checker = function() {
-    let numSplit = numberMemory.split(' ')
-    let check = "+-x/"
-    let numerical = "1234567890"
-    let ops = numSplit.filter(item => check.includes(item) ? true : false)
-    let nums = numSplit.filter(item => numerical.includes(item) ? true : false)
-    let currentOp = ops.splice(0,1)
-}
+// operation checker
 const opLoader = function(nums,ops) {switch(ops) {
     case '+':
         result = (addition(nums));
@@ -108,3 +76,16 @@ const opLoader = function(nums,ops) {switch(ops) {
         result = division(nums);
         break;
 }}
+// restructuring of calculation
+const checker = function() {
+    let numSplit = numberMemory.split(' ')
+    let check = "+-x/"
+    let ops = numSplit.filter(item => check.includes(item) ? true : false)
+    let nums = numSplit.map(item => Number(item))
+    let trueNums = nums.filter(item => Number.isNaN(item) === true ? false : true)
+    let currentOp = ops.splice(0,1)
+    opLoader(trueNums,currentOp[0])
+    subject.textContent = '' + result
+}
+
+equals.addEventListener('click', checker)
