@@ -60,8 +60,9 @@ clear.addEventListener('click', function() {
 })
 // calculator
 let numberMemory = ''
-equals.addEventListener('click', function() {
-    let result = ''
+let result = ''
+
+const operate = function() {
     let numberSplit = numberMemory.split(' ')
     let n1 = Number(numberSplit[0])
     let n2 = Number(numberSplit[2])
@@ -81,4 +82,6 @@ equals.addEventListener('click', function() {
             break;
     }
     subject.textContent = '' + result
-})
+    result += numberSplit
+}
+equals.addEventListener('click', operate)
