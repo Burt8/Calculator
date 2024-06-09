@@ -76,8 +76,8 @@ const opLoader = function(nums,ops) {switch(ops) {
         result = division(nums);
         break;
 }}
-// restructuring of calculation
-const checker = function() {
+// restructuring of
+const sanitize = function() {
     let numSplit = numberMemory.split(' ')
     let check = "+-x/"
     let ops = numSplit.filter(item => check.includes(item) ? true : false)
