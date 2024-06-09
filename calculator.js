@@ -20,17 +20,17 @@ let equals = document.querySelector('.equals');
 let screen = document.querySelector('.screen');
 let subject = document.querySelector('.subject');
 // operations
-const addition = function(a,b) {
-    return a+b
+const addition = function(arr) {
+    return arr.reduce((sum,current) => sum+current)
 }
-const subtraction = function(a,b) {
-    return a-b
+const subtraction = function(arr) {
+    return arr.reduce((sum,current) => sum-current)
 }
-const multiplication = function(a,b) {
-    return a*b
+const multiplication = function(arr) {
+    return arr.reduce((sum,current) => sum * current)
 }
-const division = function(a,b) {
-    return a/b
+const division = function(arr) {
+    return arr.reduce((sum,current) => sum/current)
 }
 // event handlers
 let functionButtons = [add,subtract,multiply,divide];
@@ -85,3 +85,26 @@ const operate = function() {
     result += numberSplit
 }
 equals.addEventListener('click', operate)
+// restructuring my calculation method
+const checker = function() {
+    let numSplit = numberMemory.split(' ')
+    let check = "+-x/"
+    let numerical = "1234567890"
+    let ops = numSplit.filter(item => check.includes(item) ? true : false)
+    let nums = numSplit.filter(item => numerical.includes(item) ? true : false)
+    let currentOp = ops.splice(0,1)
+}
+const opLoader = function(nums,ops) {switch(ops) {
+    case '+':
+        result = (addition(nums));
+        break;
+    case '-':
+        result = subtraction(nums);
+        break;
+    case 'x':
+        result = multiplication(nums);
+        break;
+    case '/':
+        result = division(nums);
+        break;
+}}
