@@ -62,7 +62,7 @@ clear.addEventListener('click', function() {
 let numberMemory = ''
 let result = ''
 // operation checker
-const opLoader = function(nums,ops) {switch(ops) {
+const calculate = function(nums,ops) {switch(ops) {
     case '+':
         result = (addition(nums));
         break;
@@ -76,16 +76,15 @@ const opLoader = function(nums,ops) {switch(ops) {
         result = division(nums);
         break;
 }}
-// restructuring of
-const sanitize = function() {
+// restructuring 
+const sanitizer = function() {
     let numSplit = numberMemory.split(' ')
     let check = "+-x/"
     let ops = numSplit.filter(item => check.includes(item) ? true : false)
     let nums = numSplit.map(item => Number(item))
-    let trueNums = nums.filter(item => Number.isNaN(item) === true ? false : true)
-    let currentOp = ops.splice(0,1)
-    opLoader(trueNums,currentOp[0])
+    let cleanNums = nums.filter(item => Number.isNaN(item) === true ? false : true)
+    let opStage = ops.splice(0,1)
+    calculate(cleanNums,opStage[0])
     subject.textContent = '' + result
 }
-
-equals.addEventListener('click', checker)
+equals.addEventListener('click', sanitizer)
