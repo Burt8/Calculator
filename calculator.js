@@ -61,7 +61,11 @@ clear.addEventListener('click', function() {
 // memory
 let numberMemory = ''
 let result = ''
-// operation checker
+// operation process: organizer -> sanitizer -> calculate
+const organizer = function() {
+
+};
+
 const calculate = function(nums,ops) {switch(ops) {
     case '+':
         result = (addition(nums));
@@ -75,7 +79,7 @@ const calculate = function(nums,ops) {switch(ops) {
     case '/':
         result = division(nums);
         break;
-}}
+}};
 // restructuring 
 const sanitizer = function() {
     let numSplit = numberMemory.split(' ')
@@ -86,5 +90,6 @@ const sanitizer = function() {
     let opStage = ops.splice(0,1)
     calculate(cleanNums,opStage[0])
     subject.textContent = '' + result
-}
+    numberMemory = result
+};
 equals.addEventListener('click', sanitizer)
