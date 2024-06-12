@@ -82,6 +82,6 @@ const operate = function() {
             break;
     }
     subject.textContent = '' + result
-    result += numberSplit
+    numberMemory = result
 }
 equals.addEventListener('click', operate)
