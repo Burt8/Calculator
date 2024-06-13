@@ -81,7 +81,11 @@ const operate = function() {
             result = division(n1,n2);
             break;
     }
+    finisher()
+}
+
+const finisher = function() {
     subject.textContent = '' + result
     numberMemory = result
 }
-equals.addEventListener('click', operate)
+equals.addEventListener('click', limiter)
