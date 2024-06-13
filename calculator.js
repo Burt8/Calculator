@@ -83,6 +83,18 @@ const operate = function() {
     }
     finisher()
 }
+const limiter = function() {
+    let numberSplit = numberMemory.split(' ')
+    if(numberSplit[0] === '' && numberSplit[2] === '') {
+        subject.textContent = ''
+        numberMemory = ''
+    } else if (numberMemory.includes('0 /') === true || numberMemory.includes('/ 0') === true) {
+        subject.textContent = 'Whoops!'
+        numberMemory = ''
+    } else {
+        operate()
+    }
+}
 
 const finisher = function() {
     subject.textContent = '' + result
