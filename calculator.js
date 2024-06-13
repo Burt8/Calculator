@@ -50,6 +50,7 @@ functionButtons.map(button => {
     let current = functions.shift()
     button.addEventListener('click', function() {
         numberMemory += current;
+        operatorLimiter()
         subject.textContent = numberMemory
     })
 })
@@ -85,7 +86,12 @@ const operate = function() {
 }
 const limiter = function() {
     let numberSplit = numberMemory.split(' ')
-    if(numberSplit[0] === '' && numberSplit[2] === '') {
+    let check = '+-x/'
+    let operators = numberSplit.filter(item => check.includes(item) && item)
+    if (operators.length > 1) {
+        subject.textContent = 'Error'
+        numberMemory = ''
+    } else if(numberSplit[0] === '' && numberSplit[2] === '') {
         subject.textContent = ''
         numberMemory = ''
     } else if (numberMemory.includes('0 /') === true || numberMemory.includes('/ 0') === true) {
