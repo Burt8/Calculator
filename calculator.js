@@ -50,10 +50,10 @@ functionButtons.map(button => {
     let current = functions.shift()
     button.addEventListener('click', function() {
         numberMemory += current;
-        operatorLimiter()
         subject.textContent = numberMemory
+        jumper()
     })
-})
+});
 // for clear button
 clear.addEventListener('click', function() {
     subject.textContent = ''
@@ -101,6 +101,18 @@ const limiter = function() {
         operate()
     }
 }
+
+const jumper = function() {
+    let numberSplit = numberMemory.split('')
+    let check = '+-x/'
+    let operators = numberSplit.filter(item => check.includes(item) && item)
+    console.log(operators)
+    if(operators.length === 2) {
+        operate()
+        let last = ' ' + operators.pop() + ' '
+        numberMemory += last
+    }
+};
 
 const finisher = function() {
     subject.textContent = '' + result
